@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="portfolio-2.css">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper" style="background-color: black;color:white">
+
+        <div class="container">
+
+            <div class="navbar">
+
+                <div class="logocontainer">
+                    <img src="data:image/png;base64,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"
+                        class="logo">
+                    <div class="logotext">
+                        <span data-splitting="chars" class="span">Kavya</span>
+                    </div>
+                </div>
+
+                <div class="navitems">
+                    <div><a href="#wrapper">Home</a></div>
+                    <div><a href="#resume">About</a></div>
+                    <div><a href="#skills">Skills</a></div>
+                    <div><a href="#projects">Projects</a></div>
+                    <div><a href="#contactme">Contact Me</a></div>
+                </div>
+
+            </div>
+
+            <div class="herosection">
+                <div class="fadedtext">Works</div>
+
+                <div class="heroleft">
+                    <div class="heroheading">Hi !!! This is Kavya U</div>
+                    <div class="heroheading herosubheading">
+                        I am a <span class="role">Full-Stack Developer</span>
+                    </div>
+                    <div class="herodescription">
+                        I’m a fullstack developer and here is my portfolio website. Here you’ll learn about my journey
+                        as a fullstack developer.
+                    </div>
+                    <div class="btn" id="btn">Hire me</div>
+                </div>
+
+                <div class="heroright">
+                    <div class="imgContainer">
+
+                    </div>
+                    <img src="Kavya Web.jpeg" class="img" alt="City" width="345px" height="390px" />
+                </div>
+
+            </div>
+
+        </div>
+
+        <div id="projects" class="project-section" style="background-color: #04AA6D;">
+            <h2 class="page-header" style="color:black">Projects</h2>
+
+            <div class="project-container">
+
+                <div class="project-card" id="project1">
+                    <div class="project-number project-number-left">01</div>
+
+                    <div class="project-content project-content-left">
+                        <div class="project-skills-container">
+                            <!--<img class="project-skill" src="./images/stack/HTML.png" />
+                            <img class="project-skill" src="./images/stack/CSS.png" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg" />
+                            <img class="project-skill" src="./images/stack/Express.png" />
+                            <img class="project-skill" src="./images/stack/NextJsCircle.png" />
+                            <img class="project-skill" src="./images/stack/Tailwind.png" />
+                            <img class="project-skill" src="./images/stack/NodeJs.svg" />
+                            <img class="project-skill" src="./images/stack/MongoDB.svg" />
+                            <img class="project-skill" src="./images/stack/Redux.svg" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" />-->
+                        </div>
+                        <h2 class="project-heading">Portfolio Website</h2>
+
+                        <p class="project-subheading">Portofio website for briefing my skills and experiences for
+                            placments.</p>
+                        <div class="btn-group">
+                            <button class="btn btnProject">Read More</button>
+                            <a href="">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project2">
+                    <div class="project-number project-number-right">02</div>
+
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <!--<img class="project-skill" src="./images/stack/HTML.png" />
+                            <img class="project-skill" src="./images/stack/CSS.png" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg">
+                            <img class="project-skill" src="./images/stack/NextJsCircle.png" />
+                            <img class="project-skill" src="./images/stack/Tailwind.png" />
+                            <img class="project-skill" src="./images/stack/Redux.svg" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" />-->
+                        </div>
+                        <h2 class="project-heading">Cosmetics Ordering Website</h2>
+                        <p class="project-subheading">
+                            An E-Commerce website to buy ornaments and makeup-kit.
+                        </p>
+                        <div class="btn-group">
+                            <button class="btn btnProject">Read More</button>
+                            <a href="">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project3">
+                    <div class="project-number project-number-left">03</div>
+
+                    <div class="project-content project-content-left">
+                        <div class="project-skills-container">
+                            <!--<img class="project-skill" src="./images/stack/HTML.png" />
+                            <img class="project-skill" src="./images/stack/CSS.png" />
+                            <img class="project-skill" src="./images/stack/Javascript.svg">
+                            <img class="project-skill" src="./images/stack/NextJsCircle.png" />
+                            <img class="project-skill" src="./images/stack/Tailwind.png" />
+                            <img class="project-skill" src="./images/stack/Redux.svg" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" />-->
+                        </div>
+                        <h2 class="project-heading">Ticket Booking System</h2>
+                        <p class="project-subheading">
+                            A platform to buy tickets online at ease for themeparks, adventures, fares and foodstreets.
+                        </p>
+                        <div class="btn-group">
+                            <button class="btn btnProject">Read More</button>
+                            <a href="">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card" id="project4">
+                    <div class="project-number project-number-right">04</div>
+
+                    <div class="project-content project-content-right">
+                        <div class="project-skills-container">
+                            <!--<img class="project-skill" src="./images/stack/NextJsCircle.png" />
+                            <img class="project-skill" src="./images/stack/Tailwind.png" />
+                            <img class="project-skill" src="./images/stack/Vercel.svg" />-->
+                        </div>
+                        <h2 class="project-heading">Blood Bank Website</h2>
+                        <p class="project-subheading">
+                            A dynamic website to find the correct blood donar and blood accepetor.
+                        </p>
+
+                        <div class="btn-group">
+                            <button class="btn btnProject">Read More</button>
+                            <a href="">
+                                <i title="GitHubLink" class="fa-brands fa-github icon"></i>
+                            </a>
+                            <a href="">
+                                <i title="Live Link" class="fa-solid fa-link icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <br><br><br><br><br>
+        <div class="wrapper" style="justify-content: center;">
+            <div class="img-container">
+                <div class="image-cube">
+                    <div class="front">
+                        <img src="Kavya Web.jpeg" class="imgs" />
+                    </div>
+                    <div class="right">
+                        <img src="Kavya Web.jpeg" class="imgs" />
+                    </div>
+                    <div class="back">
+                        <img src="Kavya Web.jpeg" class="imgs" />
+                    </div>
+                    <div class="left">
+                        <img src="Kavya Web.jpeg" class="imgs" />
+                    </div>
+                </div>
+            </div>
+            <div class="btns">
+                <button id="prev">
+                    <i class="fas fa-arrow-left">Prev</i>
+                </button>
+                <button id="next">
+                    <i class="fas fa-arrow-right">Next</i>
+                </button>
+            </div>
+        </div>
+        <br />
+        <hr>
+
+        <div id="resume" class="resume-section">
+            <h2 class="page-header">About</h2>
+            <div class="resume-container">
+                <div class="myinfo">
+                    <h3 class="skill-heading">Kavya U</h3>
+                    <p class="skill-subHeading" style="width: 600px;" id="resume-para">
+                        I am from second-year BTech Computer Science and Business System Department, passionate about
+                        software development and Web
+                        Development. I have experience freelancing and am interested in becoming a Software Developer
+                        (SDE). I enjoy learning and am always looking for new challenges to develop my skills further. I
+                        am organized and goal-oriented, also enjoy solving problems by building logical and efficient
+                        solutions. If you're looking for a motivated individual passionate about software development
+                        and Web Development, feel free to connect with me. I am excited about the prospect of being a
+                        valuable asset to your team.
+                    </p>
+                </div>
+                <div class="resume-pdf">
+                    <a href="https://drive.google.com/file/d/1pGZAYgPyR2G3eXVbsROeX1Ct4sICvcp2/view?usp=sharing"
+                        target="_blank">
+                        <button class="btn" id="resume-btn">
+                            Download My Resume
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <h2 class="page-header">Certificates</h2>
+        <div class="cards">
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+            <a href="#"><span class="image"><img src="Kavya Web.jpeg"></span></a>
+        </div>
+
+
+        <div id="skills" class="container skills-container">
+
+            <div class="skill-fade-text">Skills</div>
+            <div class="skill-container-left">
+                <h2 class="skill-heading">
+                    <span class="caps">M</span>e and
+                    <br>
+                    MyTech Stack
+                </h2>
+                <div class="skill-subHeading">
+                    <p>
+                        Greetings fellow developers! I've immersed myself in the realm
+                        of Full Stack Web Development for the past 2 years. Presently, my journey intertwines with a
+                        building wesites that understands the needs of users and customising it. Simultaneously, I
+                        thrive
+                        as a dedicated entreprenuer to expand my crafts business.My forte lies in weaving intricate
+                        threads of
+                        captivating UI-UX designs.
+                    </p>
+                    <p>
+                        As lines of code unfold, opportunities arise. The symphony of tags and functions orchestrates
+                        digital experiences that resonate with users. Challenges met with innovation, and solutions
+                        woven with logic - this is the essence of my coding voyage.
+                    </p>
+                    <p>
+                        Amidst the possibilities, I curate interfaces that dance harmoniously with the human touch.
+                        Spanning a web of creativity, I endeavor to make technology seamless and beautiful.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="skill-container-right">
+                <img src="./images/userAsset/blob vector.png" class="blob-style" height="220px" />
+
+                <img src="./images/stack/HTML.png" alt="" class="skills-logo" />
+                <img src="./images/stack/CSS.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Javascript.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/React.png" alt="" class="skills-logo" />
+                <img src="./images/stack/NodeJs.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Next.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Redux.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Tailwind.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Bootstrap.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/MaterialUI.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Express.png" alt="" class="skills-logo" />
+                <img src="./images/stack/Git.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Github.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Graphql.svg" alt="" class="skills-logo" />
+                <img src="images/stack/MongoDB.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Vercel.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/ChartJs.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Bash.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/Docker.svg" alt="" class="skills-logo" />
+                <img src="./images/stack/K8s.svg" alt="" class="skills-logo" />
+            </div>
+
+        </div>
+
+        <div class="contain">
+            <div class="skill-container">
+                <div class="skill-box">
+                    <span class="skill-title">HTML</span>
+                    <div class="skill-bar">
+                        <span class="skill-per html">
+                            <span class="tooltip">95%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-title">CSS</span>
+                    <div class="skill-bar">
+                        <span class="skill-per css">
+                            <span class="tooltip">80%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-title">JavaScript</span>
+                    <div class="skill-bar">
+                        <span class="skill-per javascript">
+                            <span class="tooltip">70%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-title">MERN Stack</span>
+                    <div class="skill-bar">
+                        <span class="skill-per mern">
+                            <span class="tooltip">30%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-title">Bootstrap and Tailwind CSS</span>
+                    <div class="skill-bar">
+                        <span class="skill-per framework">
+                            <span class="tooltip">60%</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="skill-box">
+                    <span class="skill-title">PHP and SQL</span>
+                    <div class="skill-bar">
+                        <span class="skill-per php">
+                            <span class="tooltip">50%</span>
+                        </span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-circle">
+                <div class="wrapper">
+                    <div class="card">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text" style="text-align: center;">Communication</div>
+                    </div>
+                    <div class="card 1">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Leadership</div>
+                    </div>
+
+                    <div class="card 2">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Adaptability</div>
+                    </div>
+
+                    <div class="card 3">
+                        <div class="circle">
+                            <div class="bar"></div>
+                            <div class="box"><span></span></div>
+                        </div>
+                        <div class="text">Spontaneity</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <br /><br />
+
+        <div class="container-fluid py-5">
+
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="horizontal-timeline">
+
+                        <ul class="list-inline items">
+                            <li class="list-inline-item items-list">
+                                <div class="px-4">
+                                    <div class="event-date badge bg-danger">7 June</div>
+                                    <h5 class="pt-2">Internship 1</h5>
+                                    <p class="text-muted">Web Developer at CodSoft</p>
+                                    <div><br><br>
+                                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item items-list">
+                                <div class="px-4">
+                                    <div class="event-date badge bg-danger">10 July</div>
+                                    <h5 class="pt-2">Internship 2</h5>
+                                    <p class="text-muted">Web Developer at Prodigy Infotech</p>
+                                    <div><br><br>
+                                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item items-list">
+                                <div class="px-4">
+                                    <div class="event-date badge bg-danger">26 August</div>
+                                    <h5 class="pt-2">Internship 3</h5>
+                                    <p class="text-muted">Web Developer at TechnoHacks Edutech</p>
+                                    <div><br><br>
+                                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="list-inline-item items-list">
+                                <div class="px-4">
+                                    <div class="event-date badge bg-warning">18 Sep</div>
+                                    <h5 class="pt-2">Internship 4</h5>
+                                    <p class="text-muted">Web Developer at Oasis Infobyte
+                                    </p>
+                                    <div><br><br>
+                                        <a href="#" class="btn btn-primary btn-sm">Read more</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+
+                    </div>
+
+                </div>
+            </div>
+
+        </div><br /><br />
+
+
+        <div class=" contactus-form-container" id="contactme">
+            <div class="container">
+
+                <h1 class="contactus-heading" id="contactme">Contact Me</h1>
+                <h3 class="contactus-sub-heading">Questions, thoughts, or just want to say hello !</h3>
+
+                <div class="contactus-form-container">
+                    <form action="">
+                        <div class="formfield-container">
+
+                            <input type="text" name="name" class="formfield" placeholder="Enter Your Name" />
+
+                            <input type="email" name="email" class="formfield" placeholder="Enter Your Email">
+
+                            <input type="text" name="subject" class="formfield" placeholder="Enter Your Subject">
+
+                            <textarea name="message" id="" cols="30" rows="10" class="formfield formfield-textarea"
+                                placeholder="Enter Your Message"></textarea>
+                        </div>
+
+                        <div>
+                            <button type="submit" class="btn" id="submit-btn">
+                                Send Message<i class="submit-icon fas fa-paper-plane"></i>
+                            </button>
+                        </div>
+
+                    </form>
+                </div><br /><br /><br /><br />
+                <div class="letter-image">
+                    <div class="animated-mail">
+                        <div class="back-fold"></div>
+                        <div class="letter">
+                            <div class="letter-border"></div>
+                            <div class="letter-title"></div>
+                            <div class="letter-context"></div>
+                            <div class="letter-stamp">
+                                <div class="letter-stamp-inner"></div>
+                            </div>
+                        </div>
+                        <div class="top-fold"></div>
+                        <div class="body"></div>
+                        <div class="left-fold"></div>
+                    </div>
+                    <div class="shadow"></div>
+                </div>
+            </div>
+        </div>
+
+
+        <footer>
+
+            <div class="container">
+
+                <div class="footer-wrapper">
+
+                    <div class="footer-faded-text">Kavya U</div>
+
+                    <div class="link-wrappper">
+                        <div>
+                            <a href="#projects">Projects</a>
+                        </div>
+                        <div>
+                            <a href="#skills">Skills</a>
+                        </div>
+                        <div>
+                            <a href="#contactme">Contact Me</a>
+                        </div>
+                    </div>
+
+                    <div class="icon-wrapper">
+                        <a href="https://www.linkedin.com/in/iampratikkakade/" target="_blank">
+                            <i class="fab fa-linkedin icon"></i>
+                        </a>
+                        <a href="https://github.com/Developed-by-Pratik" target="_blank">
+                            <i class="fab fa-github icon"></i>
+                        </a>
+                        <a href="https://twitter.com/" target="_blank">
+                            <i class="fab fa-twitter icon"></i>
+                        </a>
+                        <a href="https://www.instagram.com/" target="_blank">
+                            <i class="fab fa-instagram icon"></i>
+                        </a>
+                        <a href="mailto:Pratikkakade4618@gmail.com?subject=Feedback&body=Message">
+                            <i class="far fa-envelope icon"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </footer>
+
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/58a810656e.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-circle-progress/1.2.2/circle-progress.min.js"></script>
+    <script>
+        var typeData = new Typed(".role", {
+            strings: [
+                "UI-UX Designer",
+                "App Developer",
+                "Coder",
+            ],
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 80,
+            backDelay: 1000,
+        });
+
+        let options = {
+            startAngle: -1.55,
+            size: 150,
+            value: 0.85,
+            fill: { gradient: ['#a445b2', '#fa4299'] }
+        }
+        $(".circle .bar").circleProgress(options).on('circle-animation-progress',
+            function (event, progress, stepValue) {
+                $(this).parent().find("span").text(String(stepValue.toFixed(2).substr(2)) + "%");
+            });
+        $(".1 .bar").circleProgress({
+            value: 0.95
+        });
+        $(".2 .bar").circleProgress({
+            value: 0.90
+        });
+        $(".3 .bar").circleProgress({
+            value: 0.80
+        });
+
+        let cube = document.querySelector(".image-cube");
+        let btnNext = document.getElementById("next");
+        let btnPrev = document.getElementById("prev");
+
+        let pos = 0;
+
+        btnNext.addEventListener("click", () => {
+            pos -= 90;
+            cube.style.transform = `rotateY(${pos}deg)`;
+        });
+        btnPrev.addEventListener("click", () => {
+            pos += 90;
+            cube.style.transform = `rotateY(${pos}deg)`;
+        });
+    </script>
+</body>
+
+</html>
